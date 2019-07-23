@@ -5,6 +5,9 @@ It will sample and compare only dates both securities traded.
 Source files can be downloaded from yahoo finance.
 See example run of program below for S&P 500 index and 10 year U.S. Treasury note yields.
 
+Linux format source files and GNU Makefile are in folder Linux.
+Windows format source files and nmake makefile are in folder Windows.
+
 D:\programming\C++\secstats\bin>secstats "^GSPC.csv" "^TNX.csv"
 n = 14367
 cov(X,Y) = -1368.75
