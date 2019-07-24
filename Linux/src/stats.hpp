@@ -20,6 +20,7 @@ class Stats
       double MeanDeviation() const { return mean_dev; }
       double MedianDeviation() const { return mdn_dev; }
       double Skewness() const { return skw; }
+      void displayReport(const std::string&) const;
    private:
       int n;
       double mean;
@@ -43,9 +44,12 @@ class coStats
       coStats(const std::vector<double>&, const std::vector<double>&);
       Stats xStats;
       Stats yStats;
-      double CoVariance() { return cov; }
-      double Correlation() { return corr; }
+      int Size() const { return n; }
+      double CoVariance() const { return cov; }
+      double Correlation() const { return corr; }
+      void displayReport() const;
    private:
+      int n;
       double cov;
       double corr;
 };
