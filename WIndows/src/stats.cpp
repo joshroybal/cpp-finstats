@@ -37,7 +37,7 @@ void Stats::displayReport(const std::string& label) const
    const int w = 12;
    const int lw = 20;
 
-	std::cout << ' ' << label << std::endl;
+   std::cout << ' ' << label << std::endl;
    std::cout << " population size = " << n << std::endl;
 
    std::cout << std::fixed << std::setprecision(3);

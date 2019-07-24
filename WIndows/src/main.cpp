@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
       std::cerr << "Usage: " << argv[0] << "file1 file2\n";
       return 1;
    }
-	
-	std::string infile1(argv[1]);
-	std::string infile2(argv[2]);
+   
+   std::string infile1(argv[1]);
+   std::string infile2(argv[2]);
 
    std::map<std::string, double> xmap;
    std::map<std::string, double> ymap;
@@ -63,19 +63,19 @@ int main(int argc, char *argv[])
 
    std::map<std::string, double>::iterator xmit;
    std::map<std::string, double>::iterator ymit;
-	
-	// first process each data set individually
-	for (xmit = xmap.begin(); xmit != xmap.end(); xmit++) 
-		x.push_back(xmit->second);
+   
+   // first process each data set individually
+   for (xmit = xmap.begin(); xmit != xmap.end(); xmit++) 
+      x.push_back(xmit->second);
 
    for (ymit = ymap.begin(); ymit != ymap.end(); ymit++)
-		y.push_back(ymit->second);
-	
-	Stats xStats(x);
-	Stats yStats(y);	
-	
-	x.clear();
-	y.clear();
+      y.push_back(ymit->second);
+   
+   Stats xStats(x);
+   Stats yStats(y);  
+   
+   x.clear();
+   y.clear();
 
    for (xmit = xmap.begin(); xmit != xmap.end(); xmit++) {
       ymit = ymap.find(xmit->first);
@@ -87,14 +87,14 @@ int main(int argc, char *argv[])
 
    coStats xyStats(x, y);
 
-	const std::string label1("X = " + infile1.substr(0, infile1.length()-4));
-	const std::string label2("Y = " + infile2.substr(0, infile2.length()-4));
+   const std::string label1("X = " + infile1.substr(0, infile1.length()-4));
+   const std::string label2("Y = " + infile2.substr(0, infile2.length()-4));
 
-	// display x data summary
-	xStats.displayReport(label1);
-	// display y data summary
-	yStats.displayReport(label2);
-	// display merged data summary
+   // display x data summary
+   xStats.displayReport(label1);
+   // display y data summary
+   yStats.displayReport(label2);
+   // display merged data summary
    xyStats.displayReport();
 
    return 0;
